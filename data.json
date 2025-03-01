@@ -1,0 +1,64 @@
+{
+  "name": "Ankit Kumar",
+  "title": "Devops Engineer",
+  "email": "mechankit99@gmail.com",
+  "phone": "+91 9631127486",
+  "location": "Gurgaon, India",
+  "about": "As a Cloud Architect and AWS Boto3 Automation Engineer at Accenture, I develop and manage cloud infrastructure for various clients, using AWS core services, Infrastructure as a Code (IaC), and agile methodologies. I have almost 3 years of experience in cloud engineering, with a proven track record of designing secure and scalable cloud architectures, optimizing cloud resources and managing access, building Data and Control plane, and automating cloud deployments with IaC.<br>I have hands-on experience in implementing Lambda automations and Glue Job solutions in AWS, coding on various AWS services such as Cloud Formation Templates, Cloud Watch, Cloud Trail, encryption, logging, and Lambda, and troubleshooting SNOW alerts. I also use Signal Fx to track issues and change management. I am proficient in AWS, Python, and DevOps, and passionate about learning new technologies and solving complex problems.",
+  "skills": [
+      "CI/CD Pipeline",
+      "Lambda/Glue automations",
+      "Python",
+      "Harness",
+      "AWS Cloud Services",
+      "Docker & Kubernetes",
+      "Migrations",
+      "Teamcity",
+      "Azure DevOps",
+      "Github",
+      "Linux",
+      "Bash"
+  ],
+  "experience": [
+      {
+          "title": "Senior Developer",
+          "company": "Tech Corp",
+          "duration": "2020 - Present",
+          "responsibilities": [
+              "Led team of 5 developers in building enterprise applications",
+              "Implemented CI/CD pipelines reducing deployment time by 40%"
+          ]
+      },
+      {
+          "title": "Software Engineer",
+          "company": "StartUp Inc",
+          "duration": "2016 - 2020",
+          "responsibilities": [
+              "Developed core product features using React and Node.js",
+              "Improved application performance by 60%"
+          ]
+      }
+  ],
+  "education": [
+      {
+          "degree": "M.S. Computer Science",
+          "institution": "MIT",
+          "duration": "2014 - 2016"
+      },
+      {
+          "degree": "B.S. Software Engineering",
+          "institution": "Stanford",
+          "duration": "2010 - 2014"
+      },
+      {
+        "degree": "M.S. Computer Science",
+        "institution": "MIT",
+        "duration": "2014 - 2016"
+    },
+    {
+        "degree": "B.S. Software Engineering",
+        "institution": "Stanford",
+        "duration": "2010 - 2014"
+    }
+  ]
+}
