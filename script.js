@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             populateContent(data);
             setupEventListeners();
-            initAnimations();
+            //initAnimations();
         } catch (error) {
             console.error('Failed to load data:', error);
             showError(error);
