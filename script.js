@@ -88,11 +88,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will respond shortly.');
-            this.reset();
-        });
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzHrTE9wS_c1vL299NBXselSN2a0iUaXy0yaHeRNI17Cm7AhjhzSehHo7kpuBe39UU6HQ/exec'
+
+        const form = document.forms['contact-form']
+
+        form.addEventListener('submit', e => {
+        
+        e.preventDefault()
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you for your message! I will respond shortly." ))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+        })
+        // document.getElementById('contactForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your message! I will respond shortly.');
+        //     this.reset();
+        // });
     }
 
     function initAnimations() {
