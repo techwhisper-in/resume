@@ -1,64 +1,121 @@
 {
-  "name": "Ankit Kumar",
-  "title": "Devops Engineer",
-  "email": "mechankit99@gmail.com",
-  "phone": "+91 9631127486",
-  "location": "Gurgaon, India",
-  "about": "As a Cloud Architect and AWS Boto3 Automation Engineer at Accenture, I develop and manage cloud infrastructure for various clients, using AWS core services, Infrastructure as a Code (IaC), and agile methodologies. I have almost 3 years of experience in cloud engineering, with a proven track record of designing secure and scalable cloud architectures, optimizing cloud resources and managing access, building Data and Control plane, and automating cloud deployments with IaC.<br>I have hands-on experience in implementing Lambda automations and Glue Job solutions in AWS, coding on various AWS services such as Cloud Formation Templates, Cloud Watch, Cloud Trail, encryption, logging, and Lambda, and troubleshooting SNOW alerts. I also use Signal Fx to track issues and change management. I am proficient in AWS, Python, and DevOps, and passionate about learning new technologies and solving complex problems.",
-  "skills": [
-      "CI/CD Pipeline",
-      "Lambda/Glue automations",
-      "Python",
-      "Harness",
-      "AWS Cloud Services",
-      "Docker & Kubernetes",
-      "Migrations",
-      "Teamcity",
-      "Azure DevOps",
-      "Github",
-      "Linux",
-      "Bash"
-  ],
-  "experience": [
-      {
-          "title": "Senior Developer",
-          "company": "Tech Corp",
-          "duration": "2020 - Present",
-          "responsibilities": [
-              "Led team of 5 developers in building enterprise applications",
-              "Implemented CI/CD pipelines reducing deployment time by 40%"
-          ]
-      },
-      {
-          "title": "Software Engineer",
-          "company": "StartUp Inc",
-          "duration": "2016 - 2020",
-          "responsibilities": [
-              "Developed core product features using React and Node.js",
-              "Improved application performance by 60%"
-          ]
-      }
-  ],
-  "education": [
-      {
-          "degree": "M.S. Computer Science",
-          "institution": "MIT",
-          "duration": "2014 - 2016"
-      },
-      {
-          "degree": "B.S. Software Engineering",
-          "institution": "Stanford",
-          "duration": "2010 - 2014"
-      },
-      {
-        "degree": "M.S. Computer Science",
-        "institution": "MIT",
-        "duration": "2014 - 2016"
+    "social": [
+        {
+            "url": "https://github.com/techwhisper-in",
+            "icon": "fab fa-github"
+        },
+        {
+            "url": "https://www.linkedin.com/in/ankit-kumar-a45520181/",
+            "icon": "fab fa-linkedin"
+        }
+    ],
+    "personal": {
+        "name": "Ankit Kumar",
+        "title": "Devops Engineer",
+        "email": "mechankit99@gmail.com",
+        "phone": "+91 9631127486",
+        "location": "Gurgaon, India",
+        "profileImage": "profile.jpg",
+        "about": "As a <strong>Cloud Architect and DevOps Engineer</strong>, I design and manage secure, scalable cloud infrastructures for global clients, leveraging AWS services, Infrastructure as Code (IaC), and DevOps principles to drive digital transformation. With nearly <strong>3 years of experience</strong>, I specialize in bridging cloud architecture, automation, and agile practices to solve complex challenges while optimizing costs and performance.<br><br>My expertise lies in architecting AWS environments using services like <strong>Lambda, ECS, EKS, API Gateway, and VPCs</strong>, paired with IaC tools such as Terraform and CloudFormation. I automate resource provisioning, Glue Job workflows, and serverless Lambda functions using <strong>Python and Boto3</strong>, reducing manual effort by 40% while enforcing compliance with encryption, logging, and IAM policies.<br><br>I’ve led critical modernization initiatives, including migrating legacy CI/CD pipelines from TeamCity to Harness, which slashed pipeline configuration complexity by 60%, and transitioning monitoring systems from DataDog to Dynatrace, improving incident detection speed by 40% and cutting cloud costs by 25%. By integrating GitHub Cloud with Harness and AWS, I accelerated CI/CD workflows by 50%, enabling teams to deploy 50+ times daily with automated rollbacks and SOC2-compliant security controls.<br><br>A strong advocate for cost efficiency, I’ve reduced client AWS spending by 20–35% through rightsizing EC2 instances, optimizing Lambda cold starts, and adopting Spot Instances. My security-first approach includes designing data/control planes with CloudTrail, VPC flow logs, and automated security group updates, minimizing attack surfaces by 60%.<br><br>I thrive on collaboration, having trained 50+ engineers on IaC and observability best practices, achieving 95% adoption of modern DevOps workflows. Proficient in <strong>Python, AWS, Terraform, Docker, and Kubernetes</strong>, I stay passionate about exploring emerging tools like AI-driven observability and GitOps to solve tomorrow’s cloud challenges."
     },
-    {
-        "degree": "B.S. Software Engineering",
-        "institution": "Stanford",
-        "duration": "2010 - 2014"
-    }
-  ]
+    "skills": [
+        "CI/CD Pipeline",
+        "Lambda/Glue automations",
+        "Python",
+        "Harness",
+        "AWS Cloud Services",
+        "ECS",
+        "EKS",
+        "EC2",
+        "VPC",
+        "API Gateway",
+        "CloudFormation",
+        "Terraform",
+        "Docker & Kubernetes",
+        "Migrations",
+        "Teamcity",
+        "Azure DevOps",
+        "Github",
+        "Linux",
+        "Bash",
+        "Boto3",
+        "SignalFX",
+        "Dynatrace",
+        "Confluence"
+    ],
+    "experience": [
+        {
+            "position": "Devops Engineer",
+            "company": "Unites Airlines",
+            "duration": "2024 - Present",
+            "responsibilities": [
+                "Engineered Harness CI/CD pipelines to automate build, test, and deployment processes, reducing deployment errors by 40% and enabling 50+ daily deployments across microservices.",
+                "Integrated JFrog Artifactory with Harness to streamline artifact storage and dependency management, cutting build times by 25%.",
+                "Deployed scalable containerized applications on AWS ECS and EKS, leveraging ECR for secure Docker image management and vulnerability scanning, reducing runtime issues by 30%.",
+                "Migrated legacy EC2 workloads to serverless AWS Lambda functions, lowering infrastructure costs by 35% while improving scalability.",
+                "Automated provisioning of AWS resources (VPCs, EC2, ECS, API Gateway) using Terraform and CloudFormation (CFT), ensuring consistent environments and reducing setup time from days to hours.",
+                "Developed reusable Terraform modules for multi-region EKS clusters, enhancing disaster recovery capabilities.",
+                "Designed RESTful APIs using AWS API Gateway with Lambda integration, implementing rate limiting and OIDC authentication to bolster security and handle 10K+ RPM.",
+                "Orchestrated event-driven serverless workflows (Lambda, SQS, SNS) to process real-time data, reducing latency by 50%.",
+                "Architected VPCs with public/private subnets, NACLs, and VPN peering to meet SOC2 compliance, minimizing attack surface by 60%.",
+                "Automated security group updates and VPC flow log analysis using Python (Boto3), improving incident response time.",
+                "Optimized AWS spending by 20% through right-sizing EC2 instances, implementing auto-scaling policies, and transitioning to Spot Instances for non-critical workloads.",
+                "Reduced ECS task startup time by 45% by fine-tuning Fargate configurations and optimizing Docker images.",
+                "Authored Python scripts to automate log analysis, resource cleanup, and Lambda cold-start mitigation, saving 150+ hours monthly.",
+                "Configured cross-account IAM roles and Kubernetes RBAC for EKS, ensuring least-privilege access across teams.",
+                "Collaborated with development teams to troubleshoot deployment bottlenecks in Harness pipelines, reducing rollbacks by 25%.",
+                "Implemented centralized logging for EKS pods and API Gateway using CloudWatch, accelerating root-cause analysis.",
+                "Led end-to-end migration of 150+ TeamCity CI/CD pipelines to Harness, reducing pipeline configuration complexity by 60% through YAML-as-code standardization and reusable templates.",
+                "Implemented Harness Delegate auto-scaling on AWS EKS to handle parallel builds, cutting pipeline execution time by 35% and enabling self-service deployments for 20+ development teams.",
+                "Replaced legacy DataDog monitoring with Dynatrace’s AI-driven observability across 50+ microservices (AWS ECS/EKS), improving mean time to detect (MTTD) by 40% through automated root-cause analysis.",
+                "Reduced cloud monitoring costs by 25% by leveraging Dynatrace Smartscape for dynamic infrastructure mapping and eliminating redundant dashboards.",
+                "Migrated 300+ repositories from on-prem GitHub Enterprise to GitHub Cloud, enforcing SAML SSO, branch protection rules, and automated secret scanning to meet SOC2 compliance requirements.",
+                "Integrated GitHub Actions with Harness CD, JFROG and AWS ECR to trigger containerized deployments, reducing CI/CD workflow setup time by 50%.",
+                "Unified Harness pipelines with Dynatrace APIs to auto-tag deployments, enabling real-time performance validation and reducing post-deployment rollbacks by 30%.",
+                "Architected GitHub Cloud webhook integrations with AWS Lambda and API Gateway to automate issue tracking and Slack notifications for critical pipeline failures.",
+                "Reduced annual tooling/licensing costs by $150K+ by consolidating TeamCity, DataDog, and on-prem GitHub into Harness, Dynatrace, and GitHub Cloud."
+            ]
+        },
+        {
+            "position": "AWS Infrastructure Engineer",
+            "company": "Accenture India Pvt. Ltd.",
+            "duration": "2021 - 2024",
+            "responsibilities": [
+                "<strong>AMI Management</strong>: Handle AMI backups, secure transfers of AMIs between AWS accounts, restoration of AMIs, instance type changes, instance migrations, EBS volume type upgrades, Building gold images/AMIs and employ auto-scaling.",
+                "<strong>VPC Configuration</strong>: Built Amazon Virtual Private Cloud (VPC) resources such as subnets, network access control lists, and security groups.",
+                "<strong>IAM Management</strong>: Built IAM users and groups.",
+                "<strong>Data Analysis</strong>: Developed Python code to analyze data from monthly Snow tickets, creating reports and reducing project time by 3 days per analysis.",
+                "<strong>Infrastructure as a Code (IAC)</strong>: Compose and demonstrate AWS CloudFormation Templates/Terraform for AWS infrastructure provisioning.",
+                "<strong>Elasticsearch Management</strong>: Architected a solution to take Elasticsearch index snapshots and restore indices using Lambda functions, ensuring proper data backup and restoration.",
+                "<strong>Cost Optimization</strong>: Developed a Lambda function that automatically deregisters older AMIs and deletes snapshots based on retention tags and age, reducing operational costs by 15% annually. Assisted in preparing cost analysis based on encouraged usage. Maintained AWS Cloud Infrastructure in Efficient Configuration from both technical and budgetary perspectives.",
+                "<strong>Resource Tagging</strong>: Created a Glue job to fetch details of tags for all AWS resources, aiding in the identification of untagged resources, Tagging to allocate costs and optimize resource planning.",
+                "<strong>Infrastructure Management</strong>: Implemented a serverless infrastructure to identify and delete unattached EBS volumes, reducing operational costs by 10% annually. Maintained availability of critical AWS Cloud infrastructure to include configuration changes to AWS Cloud Services, made sure to compliance requirements, development/testing/production environments as approved and advised.",
+                "<strong>Certificate Management</strong>: Developed and executed code for automatic alert system in AWS, ensuring timely renewal of API Gateway certificates; reduced risk of service disruption and potential revenue loss due to expired certificates by 100%.",
+                "<strong>Instance Scheduling</strong>: Developed a Lambda function in Python that automatically starts or stops EC2 instances based on a schedule, decreasing operating expenditure by 15% yearly by ensuring instances run only when needed.",
+                "<strong>API Monitoring</strong>: Designed a solution to receive REST API details and AWS Health Event notifications via email.",
+                "<strong>Database Management</strong>: Created a Python script to fetch record details of each DynamoDB table in AWS.",
+                "<strong>Log Management</strong>: Automated AWS CloudWatch Log Groups to change their retention policy based on applied tags.",
+                "<strong>Windows Troubleshooting</strong>: Perform daily troubleshooting on Windows hosts.",
+                "<strong>AWS Administration</strong>: Daily activities include monitoring, troubleshooting connections, maintenance, patching, analyzing CloudTrail events, and monitoring IaaS and PaaS services using AWS’s core service CloudWatch and the third-party tool Splunk SignalFx.",
+                "<strong>Documentation</strong>: Deployed, tested and documented development, pre-production, and production environments."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Technology",
+            "institution": "BCE, Patna",
+            "duration": "2017 - 2021"
+        },
+        {
+            "degree": "Senior Secondary Schooling",
+            "institution": "BSEB, Patna",
+            "duration": "2015 - 2017"
+        },
+        {
+            "degree": "Secondary Schooling",
+            "institution": "DAV Public School, Maharjganj, Siwan",
+            "duration": "2014 - 2015"
+        }
+    ]
 }

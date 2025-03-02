@@ -3,178 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        /* Navigation */
-        nav {
-            background: #34495e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #3498db;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background: #f4f4f4;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-
-        /* Experience Timeline */
-        .timeline-item {
-            border-left: 2px solid #3498db;
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            width: 15px;
-            height: 15px;
-            background: #3498db;
-            border-radius: 50%;
-            position: absolute;
-            left: -8.5px;
-            top: 0;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            background: #3498db;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #2980b9;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-/* Your existing CSS styles */
-    </style>
+    <title>Resume Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <img id="profile-img" alt="Profile" class="profile-img">
             <h1 id="name"></h1>
-            <p id="title"></p>
+            <p id="position"></p>
             <div class="contact-info">
-                <p>📧 <span id="email"></span> | 📱 <span id="phone"></span> | 📍 <span id="location"></span></p>
+                <p id="contact-details"></p>
+                <!-- <p id = "social-details"></p> -->
             </div>
+                <p id="social-details"></p>
         </div>
     </header>
 
-    <nav id="navbar">
-        <div class="container">
-            <ul>
+    <nav>
+        <div class="container nav-container">
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -187,90 +46,39 @@
 
         <section id="skills">
             <h2 class="section-title">Skills</h2>
-            <div class="skills-grid" id="skills-list"></div>
+            <div class="skills-grid" id="skills-container"></div>
         </section>
 
         <section id="experience">
             <h2 class="section-title">Experience</h2>
-            <div class="timeline" id="experience-list"></div>
+            <div class="timeline" id="experience-container"></div>
         </section>
 
         <section id="education">
             <h2 class="section-title">Education</h2>
-            <div class="timeline" id="education-list"></div>
+            <div class="timeline" id="education-container"></div>
         </section>
 
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="mobile" placeholder="Mobile Number">
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
 
-    <script>
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        // Function to fetch and display data
-        async function loadData() {
-            try {
-
-                const response = await fetch('data.json');
-                const data = await response.json();
-
-                // Populate personal information
-                document.getElementById('name').textContent = data.name;
-                document.getElementById('title').textContent = data.title;
-                document.getElementById('email').textContent = data.email;
-                document.getElementById('phone').textContent = data.phone;
-                document.getElementById('location').textContent = data.location;
-
-                // Populate About section
-                document.getElementById('about-text').innerHTML = data.about;
-
-                // Populate Skills section
-                const skillsList = document.getElementById('skills-list');
-                data.skills.forEach(skill => {
-                    const skillItem = document.createElement('div');
-                    skillItem.classList.add('skill-item');
-                    skillItem.textContent = skill;
-                    skillsList.appendChild(skillItem);
-                });
-
-                // Populate Experience section
-                const experienceList = document.getElementById('experience-list');
-                data.experience.forEach(exp => {
-                    const expItem = document.createElement('div');
-                    expItem.classList.add('timeline-item');
-                    expItem.innerHTML = `
-                        <h3>${exp.title} - ${exp.company}</h3>
-                        <p class="date">${exp.duration}</p>
-                        <ul>
-                            ${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}
-                        </ul>
-                    `;
-                    experienceList.appendChild(expItem);
-                });
-
-                // Populate Education section
-                const educationList = document.getElementById('education-list');
-                data.education.forEach(edu => {
-                    const eduItem = document.createElement('div');
-                    eduItem.classList.add('timeline-item');
-                    eduItem.innerHTML = `
-                        <h3>${edu.degree} - ${edu.institution}</h3>
-                        <p class="date">${edu.duration}</p>
-                    `;
-                    educationList.appendChild(eduItem);
-                });
-            } catch (error) {
-                console.error('Error loading data:', error);
-            }
-        }
-
-        // Load data when the page loads
-        window.addEventListener('load', loadData);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
