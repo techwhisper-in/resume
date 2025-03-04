@@ -102,6 +102,28 @@
             ]
         }
     ],
+    "certification": [
+        {
+            "name": "HashiCorp Certified: Terraform Associate (003)",
+            "institution": "HashiCorp"
+        },
+        {
+            "name": "AWS Certified Developer - Associate",
+            "institution": "Amazon Web Services (AWS)"
+        },
+        {
+            "name": "AWS Certified Solutions Architect",
+            "institution": "Amazon Web Services (AWS)"
+        },
+        {
+            "name": "Microsoft Certified Azure Fundamentals (az-900)",
+            "institution": "Microsoft"
+        },
+        {
+            "name": "Azure administrator associate (az-104)",
+            "institution": "Microsoft"
+        }
+    ],
     "education": [
         {
             "degree": "Bachelor of Technology",

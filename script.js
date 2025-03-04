@@ -48,6 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `).join('');
 
+        // Certification
+        const certificationContainer = document.getElementById('certification-container');
+        certificationContainer.innerHTML = data.certification
+            .map(cert => `
+                <div class="timeline-item">
+                    <h3>${cert.name}</h3>
+                    <p class="date">${cert.institution}</p>
+                </div>
+            `).join('');
         // Education
         const educationContainer = document.getElementById('education-container');
         educationContainer.innerHTML = data.education
