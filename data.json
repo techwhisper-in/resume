@@ -5,14 +5,14 @@
             "icon": "fab fa-github"
         },
         {
-            "url": "https://www.linkedin.com/in/ankit-kumar-a45520181/",
+            "url": "https://www.linkedin.com/in/ankitkr99/",
             "icon": "fab fa-linkedin"
         }
     ],
     "personal": {
         "name": "Ankit Kumar",
         "title": "Devops Engineer",
-        "email": "mechankit99@gmail.com",
+        "email": "ankitkr.techie@gmail.com",
         "phone": "+91 9631127486",
         "location": "Gurgaon, India",
         "profileImage": "profile.jpg",
@@ -141,4 +141,5 @@
             "duration": "2014 - 2015"
         }
     ]
+
 }
