@@ -9,17 +9,24 @@
             "icon": "fab fa-linkedin"
         }
     ],
+    "stats": [
+        { "number": "4+", "text": "Years of Experience" },
+        { "number": "40%", "text": "Reduction in Deployment Errors" },
+        { "number": "50+", "text": "Daily Deployments" },
+        { "number": "35%", "text": "Cost Reduction" }
+    ],
     "personal": {
         "name": "Ankit Kumar",
-        "title": "Devops Engineer",
+        "title": "DevOps Engineer II",
         "email": "ankitkr.techie@gmail.com",
         "phone": "+91 9631127486",
         "location": "Gurgaon, India",
         "profileImage": "profile.jpg",
-        "position": "DevOps Engineer",
-        "about": "As a <strong>Cloud Architect and DevOps Engineer</strong>, I design and manage secure, scalable cloud infrastructures for global clients, leveraging AWS services, Infrastructure as Code (IaC), and DevOps principles to drive digital transformation. With nearly <strong>3 years of experience</strong>, I specialize in bridging cloud architecture, automation, and agile practices to solve complex challenges while optimizing costs and performance.<br><br>My expertise lies in architecting AWS environments using services like <strong>Lambda, ECS, EKS, API Gateway, and VPCs</strong>, paired with IaC tools such as Terraform and CloudFormation. I automate resource provisioning, Glue Job workflows, and serverless Lambda functions using <strong>Python and Boto3</strong>, reducing manual effort by 40% while enforcing compliance with encryption, logging, and IAM policies.<br><br>I’ve led critical modernization initiatives, including migrating legacy CI/CD pipelines from TeamCity to Harness, which slashed pipeline configuration complexity by 60%, and transitioning monitoring systems from DataDog to Dynatrace, improving incident detection speed by 40% and cutting cloud costs by 25%. By integrating GitHub Cloud with Harness and AWS, I accelerated CI/CD workflows by 50%, enabling teams to deploy 50+ times daily with automated rollbacks and SOC2-compliant security controls.<br><br>A strong advocate for cost efficiency, I’ve reduced client AWS spending by 20–35% through rightsizing EC2 instances, optimizing Lambda cold starts, and adopting Spot Instances. My security-first approach includes designing data/control planes with CloudTrail, VPC flow logs, and automated security group updates, minimizing attack surfaces by 60%.<br><br>I thrive on collaboration, having trained 50+ engineers on IaC and observability best practices, achieving 95% adoption of modern DevOps workflows. Proficient in <strong>Python, AWS, Terraform, Docker, and Kubernetes</strong>, I stay passionate about exploring emerging tools like AI-driven observability and GitOps to solve tomorrow’s cloud challenges."
+        "position": "DevOps Engineer II",
+        "about": "As a <strong>Cloud Architect and DevOps Engineer</strong>, I design and manage secure, scalable cloud infrastructures for global clients, leveraging AWS services, Infrastructure as Code (IaC), and DevOps principles to drive digital transformation. With <strong>4 years of experience</strong>, I specialize in bridging cloud architecture, automation, and agile practices to solve complex challenges while optimizing costs and performance.<br><br>My expertise lies in architecting AWS environments using services like <strong>Lambda, ECS, EKS, API Gateway, and VPCs</strong>, paired with IaC tools such as Terraform and CloudFormation. I automate resource provisioning, Glue Job workflows, and serverless Lambda functions using <strong>Python and Boto3</strong>, reducing manual effort by 40% while enforcing compliance with encryption, logging, and IAM policies.<br><br>I've led critical modernization initiatives, including migrating legacy CI/CD pipelines from TeamCity to Harness, which slashed pipeline configuration complexity by 60%, and transitioning monitoring systems from DataDog to Dynatrace, improving incident detection speed by 40% and cutting cloud costs by 25%. By integrating GitHub Cloud with Harness and AWS, I accelerated CI/CD workflows by 50%, enabling teams to deploy 50+ times daily with automated rollbacks and SOC2-compliant security controls.<br><br>A strong advocate for cost efficiency, I've reduced client AWS spending by 20-35% through rightsizing EC2 instances, optimizing Lambda cold starts, and adopting Spot Instances. My security-first approach includes designing data/control planes with CloudTrail, VPC flow logs, and automated security group updates, minimizing attack surfaces by 60%.<br><br>I thrive on collaboration, having trained 50+ engineers on IaC and observability best practices, achieving 95% adoption of modern DevOps workflows. Proficient in <strong>Python, AWS, Terraform, Docker, and Kubernetes</strong>, I stay passionate about exploring emerging tools like AI-driven observability and GitOps to solve tomorrow's cloud challenges."
     },
     "skills": [
+        "Github Actions",
         "CI/CD Pipeline",
         "Lambda/Glue automations",
         "Python",
@@ -46,7 +53,7 @@
     ],
     "experience": [
         {
-            "position": "Devops Engineer",
+            "position": "Devops Engineer II",
             "company": "Unites Airlines",
             "duration": "2024 - Present",
             "responsibilities": [
@@ -68,7 +75,7 @@
                 "Implemented centralized logging for EKS pods and API Gateway using CloudWatch, accelerating root-cause analysis.",
                 "Led end-to-end migration of 150+ TeamCity CI/CD pipelines to Harness, reducing pipeline configuration complexity by 60% through YAML-as-code standardization and reusable templates.",
                 "Implemented Harness Delegate auto-scaling on AWS EKS to handle parallel builds, cutting pipeline execution time by 35% and enabling self-service deployments for 20+ development teams.",
-                "Replaced legacy DataDog monitoring with Dynatrace’s AI-driven observability across 50+ microservices (AWS ECS/EKS), improving mean time to detect (MTTD) by 40% through automated root-cause analysis.",
+                "Replaced legacy DataDog monitoring with Dynatrace's AI-driven observability across 50+ microservices (AWS ECS/EKS), improving mean time to detect (MTTD) by 40% through automated root-cause analysis.",
                 "Reduced cloud monitoring costs by 25% by leveraging Dynatrace Smartscape for dynamic infrastructure mapping and eliminating redundant dashboards.",
                 "Migrated 300+ repositories from on-prem GitHub Enterprise to GitHub Cloud, enforcing SAML SSO, branch protection rules, and automated secret scanning to meet SOC2 compliance requirements.",
                 "Integrated GitHub Actions with Harness CD, JFROG and AWS ECR to trigger containerized deployments, reducing CI/CD workflow setup time by 50%.",
@@ -97,7 +104,7 @@
                 "<strong>Database Management</strong>: Created a Python script to fetch record details of each DynamoDB table in AWS.",
                 "<strong>Log Management</strong>: Automated AWS CloudWatch Log Groups to change their retention policy based on applied tags.",
                 "<strong>Windows Troubleshooting</strong>: Perform daily troubleshooting on Windows hosts.",
-                "<strong>AWS Administration</strong>: Daily activities include monitoring, troubleshooting connections, maintenance, patching, analyzing CloudTrail events, and monitoring IaaS and PaaS services using AWS’s core service CloudWatch and the third-party tool Splunk SignalFx.",
+                "<strong>AWS Administration</strong>: Daily activities include monitoring, troubleshooting connections, maintenance, patching, analyzing CloudTrail events, and monitoring IaaS and PaaS services using AWS's core service CloudWatch and the third-party tool Splunk SignalFx.",
                 "<strong>Documentation</strong>: Deployed, tested and documented development, pre-production, and production environments."
             ]
         }
@@ -141,5 +148,4 @@
             "duration": "2014 - 2015"
         }
     ]
-
 }

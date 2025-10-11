@@ -1,153 +1,231 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Load JSON data
-    async function loadData() {
-        try {
-            const response = await fetch('data.json');
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const data = await response.json();
-            populateContent(data);
-            setupEventListeners();
-            //initAnimations();
-        } catch (error) {
-            console.error('Failed to load data:', error);
-            showError(error);
-        }
-    }
+// Function to populate the portfolio
+function populatePortfolio(portfolioData) {
+    // Personal Information
+    // Set page title using existing data
+    document.title = `${portfolioData.personal.name} - ${portfolioData.personal.title} Portfolio`;
+    document.getElementById('logoName').textContent = portfolioData.personal.name;
+    document.getElementById('heroName').textContent = portfolioData.personal.name;
+    document.getElementById('heroTitle').textContent = portfolioData.personal.title;
+    //document.getElementById('heroEmail').textContent = portfolioData.personal.email;
+    // Contact Information with clickable links
+    const heroEmail = document.getElementById('heroEmail');
+    heroEmail.innerHTML = `<a href="mailto:${portfolioData.personal.email}" class="email-link">${portfolioData.personal.email}</a>`;
+    const heroPhone = document.getElementById('heroPhone');
+    heroPhone.innerHTML = `<a href="tel:${portfolioData.personal.phone.replace(/\s/g, '')}" class="phone-link">${portfolioData.personal.phone}</a>`;
+    document.getElementById('heroPhone').textContent = portfolioData.personal.phone;
+    document.getElementById('heroLocation').textContent = portfolioData.personal.location;
+    document.getElementById('profileImage').src = portfolioData.personal.profileImage;
+    document.getElementById('aboutText').innerHTML = portfolioData.personal.about;
+    document.getElementById('footerName').textContent = portfolioData.personal.name;
 
-    function populateContent(data) {
-        // Personal Info
-        document.getElementById('profile-img').src = data.personal.profileImage;
-        document.getElementById('name').textContent = data.personal.name;
-        document.getElementById('position').textContent = data.personal.position;
-        document.getElementById('about-text').innerHTML = data.personal.about;
-        document.getElementById('contact-details').innerHTML = 
-            `📧 <a href="mailto:${data.personal.email}">${data.personal.email}</a> | 📱 ${data.personal.phone} | 📍 ${data.personal.location}`;
-        const socialSection = document.getElementById('social-details');
-        socialSection.innerHTML += (data.social || []).map(link => `
-                <a href="${link.url}" target="_blank" class="social-link" aria-label="${link.name}">
-                    <i class="${link.icon}"></i>
-                </a>
-        `).join('');
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        //skills
-        const skillsContainer = document.getElementById('skills-container');
-        skillsContainer.innerHTML = data.skills
-            .map(skill => `<div class="skill-item">${skill}</div>`)
-            .join('');
+    // Social Links
+    const socialLinksContainer = document.getElementById('socialLinks');
+    const footerSocialLinksContainer = document.getElementById('footerSocialLinks');
+    
+    portfolioData.social.forEach(social => {
+        const link = document.createElement('a');
+        link.href = social.url;
+        link.target = "_blank";
+        link.innerHTML = `<i class="${social.icon}"></i>`;
+        socialLinksContainer.appendChild(link);
+        
+        const footerLink = document.createElement('a');
+        footerLink.href = social.url;
+        footerLink.target = "_blank";
+        footerLink.innerHTML = `<i class="${social.icon}"></i>`;
+        footerSocialLinksContainer.appendChild(footerLink);
+    });
 
-        // Experience
-        const experienceContainer = document.getElementById('experience-container');
-        experienceContainer.innerHTML = data.experience
-            .map(exp => `
-                <div class="timeline-item">
-                    <h3>${exp.position} - ${exp.company}</h3>
-                    <p class="date">${exp.duration}</p>
-                    <ul>
-                        ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-                    </ul>
-                </div>
-            `).join('');
+    // Stats   
+    const statsContainer = document.getElementById('statsContainer');
+    portfolioData.stats.forEach(stat => {
+        const statItem = document.createElement('div');
+        statItem.className = 'stat-item';
+        
+        const statNumber = document.createElement('span');
+        statNumber.className = 'stat-number';
+        statNumber.textContent = stat.number;
+        
+        const statText = document.createElement('span');
+        statText.className = 'stat-text';
+        statText.textContent = stat.text;
+        
+        statItem.appendChild(statNumber);
+        statItem.appendChild(statText);
+        
+        statsContainer.appendChild(statItem);
+    });
 
-        // Certification
-        const certificationContainer = document.getElementById('certification-container');
-        certificationContainer.innerHTML = data.certification
-            .map(cert => `
-                <div class="timeline-item">
-                    <h3>${cert.name}</h3>
-                    <p class="date">${cert.institution}</p>
-                </div>
-            `).join('');
-        // Education
-        const educationContainer = document.getElementById('education-container');
-        educationContainer.innerHTML = data.education
-            .map(edu => `
-                <div class="timeline-item">
-                    <h3>${edu.degree} - ${edu.institution}</h3>
-                    <p class="date">${edu.duration}</p>
-                </div>
-            `).join('');
-    }
+    // Skills
+    const skillsGrid = document.getElementById('skillsGrid');
+    portfolioData.skills.forEach(skill => {
+        const skillItem = document.createElement('div');
+        skillItem.className = 'skill-item';
+        skillItem.textContent = skill;
+        skillsGrid.appendChild(skillItem);
+    });
 
-    function setupEventListeners() {
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
+    // Experience
+    const experienceTimeline = document.getElementById('experienceTimeline');
+    portfolioData.experience.forEach(exp => {
+        const timelineItem = document.createElement('div');
+        timelineItem.className = 'timeline-item';
+        
+        const duration = document.createElement('div');
+        duration.className = 'timeline-date';
+        duration.textContent = exp.duration;
+        
+        const content = document.createElement('div');
+        content.className = 'timeline-content';
+        
+        const position = document.createElement('h3');
+        position.textContent = exp.position;
+        
+        const company = document.createElement('h4');
+        company.textContent = exp.company;
+        
+        const responsibilities = document.createElement('ul');
+        responsibilities.className = 'responsibilities';
+        
+        exp.responsibilities.forEach(resp => {
+            const li = document.createElement('li');
+            li.innerHTML = resp;
+            responsibilities.appendChild(li);
         });
+        
+        content.appendChild(position);
+        content.appendChild(company);
+        content.appendChild(responsibilities);
+        
+        timelineItem.appendChild(duration);
+        timelineItem.appendChild(content);
+        
+        experienceTimeline.appendChild(timelineItem);
+    });
 
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
+    // Certifications
+    const certGrid = document.getElementById('certGrid');
+    portfolioData.certification.forEach(cert => {
+        const certItem = document.createElement('div');
+        certItem.className = 'cert-item';
+        
+        const icon = document.createElement('div');
+        icon.className = 'cert-icon';
+        icon.innerHTML = '<i class="fas fa-award"></i>';
+        
+        const name = document.createElement('h3');
+        name.textContent = cert.name;
+        
+        const institution = document.createElement('p');
+        institution.textContent = cert.institution;
+        
+        certItem.appendChild(icon);
+        certItem.appendChild(name);
+        certItem.appendChild(institution);
+        
+        certGrid.appendChild(certItem);
+    });
+
+    // Education
+    const eduGrid = document.getElementById('eduGrid');
+    portfolioData.education.forEach(edu => {
+        const eduItem = document.createElement('div');
+        eduItem.className = 'edu-item';
+        
+        const icon = document.createElement('div');
+        icon.className = 'edu-icon';
+        icon.innerHTML = '<i class="fas fa-graduation-cap"></i>';
+        
+        const degree = document.createElement('h3');
+        degree.textContent = edu.degree;
+        
+        const institution = document.createElement('p');
+        institution.textContent = edu.institution;
+        
+        const duration = document.createElement('p');
+        duration.textContent = edu.duration;
+        
+        eduItem.appendChild(icon);
+        eduItem.appendChild(degree);
+        eduItem.appendChild(institution);
+        eduItem.appendChild(duration);
+        
+        eduGrid.appendChild(eduItem);
+    });
+}
+
+// Initialize the portfolio when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch the JSON data
+    const json_version = new Date().getTime();
+    fetch('data.json?v=' + json_version)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(portfolioData => {
+            populatePortfolio(portfolioData);
+            
+            // Mobile menu toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenu.addEventListener('click', function() {
+                nav.classList.toggle('active');
             });
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a, .footer-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                    }
                 });
             });
-        });
-
-        // Form submission
-
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzHrTE9wS_c1vL299NBXselSN2a0iUaXy0yaHeRNI17Cm7AhjhzSehHo7kpuBe39UU6HQ/exec'
-
-        const form = document.forms['contact-form']
-
-        form.addEventListener('submit', e => {
-        
-        e.preventDefault()
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thank you for your message! I will respond shortly." ))
-        .then(() => { window.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
-        })
-        // document.getElementById('contactForm').addEventListener('submit', function(e) {
-        //     e.preventDefault();
-        //     alert('Thank you for your message! I will respond shortly.');
-        //     this.reset();
-        // });
-    }
-
-    function initAnimations() {
-        // Scroll animations
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 100) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '20px 0';
+                    header.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
                 }
             });
+            
+            // Form submission
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzHrTE9wS_c1vL299NBXselSN2a0iUaXy0yaHeRNI17Cm7AhjhzSehHo7kpuBe39UU6HQ/exec';
+            const form = document.forms['contact-form'];
+            
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thank you for your message! I will respond shortly." ))
+                .then(() => { window.location.reload(); })
+                .catch(error => console.error('Error!', error.message));
+            });
+        })
+        .catch(error => {
+            console.error('Error loading portfolio data:', error);
+            document.body.innerHTML = `<div style="text-align: center; padding: 50px; color: red;">Error loading portfolio data. Please check your internet connection and try again.</div>`;
         });
-
-        // Initial animation states
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'all 0.6s ease-out';
-        });
-    }
-
-    function showError(error) {
-        const errorDiv = document.createElement('div');
-        errorDiv.style.color = 'red';
-        errorDiv.style.textAlign = 'center';
-        errorDiv.style.padding = '2rem';
-        errorDiv.textContent = `Error loading resume data: ${error.message}`;
-        document.body.prepend(errorDiv);
-    }
-
-    // Start loading data
-    loadData();
 });
