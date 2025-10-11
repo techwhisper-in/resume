@@ -10,9 +10,8 @@ function populatePortfolio(portfolioData) {
     // Contact Information with clickable links
     const heroEmail = document.getElementById('heroEmail');
     heroEmail.innerHTML = `<a href="mailto:${portfolioData.personal.email}" class="email-link">${portfolioData.personal.email}</a>`;
-    const heroPhone = document.getElementById('heroPhone');
-    heroPhone.innerHTML = `<a href="tel:${portfolioData.personal.phone.replace(/\s/g, '')}" class="phone-link">${portfolioData.personal.phone}</a>`;
-    document.getElementById('heroPhone').textContent = portfolioData.personal.phone;
+    const phoneNumber = portfolioData.personal.phone.replace(/[\s\-()]/g, '');
+    heroPhone.innerHTML = `<a href="tel:${phoneNumber}" class="phone-link">${portfolioData.personal.phone}</a>`;
     document.getElementById('heroLocation').textContent = portfolioData.personal.location;
     document.getElementById('profileImage').src = portfolioData.personal.profileImage;
     document.getElementById('aboutText').innerHTML = portfolioData.personal.about;
